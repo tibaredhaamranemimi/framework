@@ -24,7 +24,7 @@
 <body onload="remplir1(); remplir2(); remplir3();"   >
 <?php 
 Session::init();
-function getmicrotime(){list($usec, $sec) = explode(" ",microtime());return ((float)$usec + (float)$sec);}
+function getmicrotime(){list($usec, $sec) = explode(" ",microtime());return ((float)$usec + (float)$sec);}   
 $temps = getmicrotime();
 ?>
 <div class="tiba" >
@@ -34,4 +34,4 @@ $temps = getmicrotime();
 	<div class="sheaderl">
 	<?php require 'menu.php';	?>				
     </div>	
-	<div class="sheaderr"><?php if (Session::get('loggedIn') == true){echo '<p id="wdj" >'; echo HTML::nbrtostring('structure','id',Session::get('structure'),'structure').' : '.Session::get('login') ;echo '</p>';}else {echo '<p id="wdj" >Wilaya De '.wilaya.'</p>';}	?>	</div>	
+	<div class="sheaderr"><?php if (Session::get('loggedIn') == true){echo '<p id="wdj" >'; echo HTML::nbrtostring('structure','id',Session::get('structure'),'structure').' : '.'<a title="compte"   href="'.URL.'users/user/">'.Session::get('login').'</a>' ;echo '</p>';}else {echo '<p id="wdj" >DSP : '.wilaya.'</p>';}	?>	</div>	
